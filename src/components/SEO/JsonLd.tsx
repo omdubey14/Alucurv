@@ -7,8 +7,8 @@ export const JsonLd: React.FC = () => {
     "@type": "Organization",
     "name": companyConfig.name,
     "alternateName": companyConfig.shortName,
-    "url": "https://www.alucurv.com",
-    "logo": "https://www.alucurv.com/images/logo.png",
+    "url": "https://www.alucurve.com",
+    "logo": "https://www.alucurve.com/images/logo.png",
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": companyConfig.phone,
@@ -29,8 +29,8 @@ export const JsonLd: React.FC = () => {
     "@type": "LocalBusiness",
     "name": companyConfig.name,
     "image": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9",
-    "@id": "https://www.alucurv.com",
-    "url": "https://www.alucurv.com",
+    "@id": "https://www.alucurve.com",
+    "url": "https://www.alucurve.com",
     "telephone": companyConfig.phone,
     "priceRange": "$$$",
     "address": {

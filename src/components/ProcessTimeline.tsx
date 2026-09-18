@@ -173,7 +173,7 @@ export const ProcessTimeline: React.FC = () => {
         {/* Process Footer Action */}
         <div className="mt-20 text-center">
           <a
-            href={getWhatsAppUrl("Hello Alucurv, I am starting a new project and would like to schedule a site measurement and consultation.")}
+            href={getWhatsAppUrl("Hello Alucurve, I am starting a new project and would like to schedule a site measurement and consultation.")}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-8 py-4 rounded bg-[#d4af37] text-slate-950 font-bold uppercase tracking-wider text-xs hover:bg-yellow-400 transition-all shadow-xl shadow-[#d4af37]/20"

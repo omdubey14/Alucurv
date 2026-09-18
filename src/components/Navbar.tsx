@@ -16,7 +16,7 @@ const navItems: NavItem[] = [
   { label: "Products", href: "#products" },
   { label: "Interactive Demo", href: "#interactive-window" },
   { label: "Projects", href: "#projects" },
-  { label: "Why Alucurv", href: "#why-us" },
+  { label: "Why Alucurve", href: "#why-us" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -72,7 +72,7 @@ export const Navbar: React.FC = () => {
           >
             <div className="flex items-center gap-2">
               <span className="text-xl md:text-2xl font-black tracking-[0.2em] text-white group-hover:text-[#d4af37] transition-colors">
-                ALUCURV
+                ALUCURVE
               </span>
               <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
             </div>
@@ -108,7 +108,7 @@ export const Navbar: React.FC = () => {
 
             <a
               href={getWhatsAppUrl(
-                "Hello Alucurv, I am interested in getting an architectural quote for aluminium system windows and glass doors."
+                "Hello Alucurve, I am interested in getting an architectural quote for aluminium system windows."
               )}
               target="_blank"
               rel="noopener noreferrer"
@@ -163,7 +163,7 @@ export const Navbar: React.FC = () => {
 
             <div className="flex flex-col gap-4 border-t border-white/10 pt-6">
               <a
-                href={getWhatsAppUrl("Hello Alucurv, I would like to request an architectural consultation via WhatsApp.")}
+                href={getWhatsAppUrl("Hello Alucurve, I would like to request an architectural consultation via WhatsApp.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-3 py-4 rounded-lg bg-[#25D366] text-white font-bold uppercase tracking-wider text-sm shadow-xl"

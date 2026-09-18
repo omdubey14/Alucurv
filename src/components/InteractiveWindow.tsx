@@ -97,7 +97,7 @@ export const InteractiveWindow: React.FC = () => {
               {/* Interior Room Shadow Wall Frame */}
               <div className="absolute inset-0 border-[24px] sm:border-[36px] border-[#0e1116] pointer-events-none z-10">
                 <div className="absolute top-2 left-2 text-[10px] font-mono text-slate-500 uppercase tracking-widest">
-                  FRAME PROFILE: ALUCURV-SLIM-90
+                  FRAME PROFILE: ALUCURVE-SLIM-90
                 </div>
               </div>
 

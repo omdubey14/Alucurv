@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-black tracking-[0.2em] text-white">ALUCURV</span>
+              <span className="text-2xl font-black tracking-[0.2em] text-white">ALUCURVE</span>
               <span className="w-2 h-2 rounded-full bg-[#d4af37]" />
             </div>
             <p className="text-xs text-[#d4af37] font-mono uppercase tracking-wider">
@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
             {/* Direct WhatsApp Callout */}
             <div className="pt-2">
               <a
-                href={getWhatsAppUrl("Hello Alucurv, I am visiting your website footer and would like to connect.")}
+                href={getWhatsAppUrl("Hello Alucurve, I am visiting your website footer and would like to connect.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider hover:bg-emerald-500 transition-colors shadow-lg"
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
               Navigation
             </h4>
             <ul className="space-y-2.5 text-xs">
-              {["Home", "About", "Products", "Projects", "Why Alucurv", "Contact"].map((item) => (
+              {["Home", "About", "Products", "Projects", "Why Alucurve", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(" ", "-")}`}

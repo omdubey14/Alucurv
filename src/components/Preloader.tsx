@@ -78,7 +78,7 @@ export const Preloader: React.FC = () => {
               transition={{ duration: 0.7, delay: 0.9, ease: [0.16, 1, 0.3, 1] }}
               className="text-3xl md:text-4xl font-extrabold tracking-[0.25em] text-white"
             >
-              ALUCURV
+              ALUCURVE
             </motion.h1>
           </div>
 

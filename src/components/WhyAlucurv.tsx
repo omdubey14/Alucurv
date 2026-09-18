@@ -71,7 +71,7 @@ export const WhyAlucurv: React.FC = () => {
             [ ARCHITECTURAL EXCELLENCE ]
           </div>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            WHY <span className="metallic-text">ALUCURV SYSTEMS</span>
+            WHY <span className="metallic-text">ALUCURVE SYSTEMS</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base font-light">
             We don't assemble off-the-shelf windows. We engineer architectural aluminium solutions built to elevated technical specifications.

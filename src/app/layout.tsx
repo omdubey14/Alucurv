@@ -8,32 +8,29 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { JsonLd } from "@/components/SEO/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Alucurv Aluminium System Windows | Premium Aluminium & Glass Solutions",
+  title: "Alucurve Aluminium System Windows | Premium Aluminium Systems",
   description:
-    "Alucurv Aluminium System Window Pvt. Ltd. provides premium aluminium windows, doors, minimal sliding systems, curtain walls and architectural glass solutions for modern residential and commercial spaces.",
+    "Alucurve Aluminium System Window Pvt. Ltd. provides premium aluminium windows, doors, minimal sliding systems, and curtain walls for modern residential and commercial spaces.",
   keywords: [
     "Aluminium System Windows",
     "Minimal Sliding Doors",
-    "Architectural Glass Solutions",
     "Aluminium Window Manufacturer",
     "Curtain Wall Facade",
-    "Double Glazed Low-E Glass",
-    "Toughened Glass Partitions",
-    "Alucurv Systems",
+    "Alucurve Systems",
   ],
   authors: [{ name: companyConfig.name }],
   openGraph: {
-    title: "Alucurv Aluminium System Windows | Architectural Glass Solutions",
+    title: "Alucurve Aluminium System Windows | Architectural Systems",
     description:
-      "Engineered aluminium windows, minimal sliding doors and architectural glass systems for modern living.",
-    url: "https://www.alucurv.com",
+      "Engineered aluminium windows, minimal sliding doors and architectural systems for modern living.",
+    url: "https://www.alucurve.com",
     siteName: companyConfig.name,
     images: [
       {
         url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200",
         width: 1200,
         height: 630,
-        alt: "Alucurv Premium Aluminium Windows & Glass Solutions",
+        alt: "Alucurve Premium Aluminium Windows",
       },
     ],
     locale: "en_US",
@@ -41,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alucurv Aluminium System Windows",
-    description: "Premium aluminium windows, doors and architectural glass systems for modern architecture.",
+    title: "Alucurve Aluminium System Windows",
+    description: "Premium aluminium windows, doors and architectural systems for modern architecture.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200"],
   },
 };

@@ -33,7 +33,7 @@ export const ContactSection: React.FC = () => {
             [ GET IN TOUCH ]
           </div>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            CONNECT WITH <span className="metallic-text">ALUCURV</span>
+            CONNECT WITH <span className="metallic-text">ALUCURVE</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base font-light">
             Visit our experience showroom, call our technical office, or request a quick call-back from an architectural engineer.
@@ -85,7 +85,7 @@ export const ContactSection: React.FC = () => {
                 <div>
                   <div className="text-xs font-mono uppercase text-slate-400">WhatsApp Desk</div>
                   <a
-                    href={getWhatsAppUrl("Hello Alucurv team, I would like to get in touch.")}
+                    href={getWhatsAppUrl("Hello Alucurve team, I would like to get in touch.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-semibold text-emerald-400 hover:underline"
@@ -148,7 +148,7 @@ export const ContactSection: React.FC = () => {
                 REQUEST A CALLBACK
               </h3>
               <p className="text-slate-400 text-xs font-light mb-8">
-                Fill in your details and an Alucurv technical specialist will contact you within 2 business hours.
+                Fill in your details and an Alucurve technical specialist will contact you within 2 business hours.
               </p>
 
               {submitted ? (

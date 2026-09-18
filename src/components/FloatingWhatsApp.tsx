@@ -38,13 +38,13 @@ export const FloatingWhatsApp: React.FC = () => {
             animate={{ opacity: hovered ? 1 : 0, x: hovered ? 0 : 10 }}
             className="hidden sm:block px-3.5 py-2 rounded-xl bg-[#0a0c0e]/90 border border-emerald-500/40 text-emerald-300 text-xs font-semibold uppercase tracking-wider backdrop-blur-md shadow-xl pointer-events-none"
           >
-            Chat with Alucurv Expert
+            Chat with Alucurve Expert
           </motion.div>
 
           {/* WhatsApp Pulse Trigger Button */}
           <a
             href={getWhatsAppUrl(
-              "Hello Alucurv team, I would like to chat about aluminium system windows and glass solutions."
+              "Hello Alucurve team, I would like to chat about aluminium system windows."
             )}
             target="_blank"
             rel="noopener noreferrer"

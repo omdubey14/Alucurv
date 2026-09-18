@@ -61,10 +61,10 @@ export const BeforeAfterSlider: React.FC = () => {
             [ ARCHITECTURAL TRANSFORMATION ]
           </div>
           <h2 className="text-3xl sm:text-5xl font-black uppercase tracking-tight text-white mb-4">
-            BEFORE vs <span className="metallic-text">ALUCURV AFTER</span>
+            BEFORE vs <span className="metallic-text">ALUCURVE AFTER</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base font-light">
-            Drag the handle horizontally to experience how upgrading dated bulky frames to slim-profile Alucurv aluminium sliding glass systems elevates daylight, luxury aesthetic, and property value.
+            Drag the handle horizontally to experience how upgrading dated bulky frames to slim-profile Alucurve aluminium sliding glass systems elevates daylight, luxury aesthetic, and property value.
           </p>
         </div>
 
@@ -94,7 +94,7 @@ export const BeforeAfterSlider: React.FC = () => {
               {/* After Label Badge */}
               <div className="absolute top-6 right-6 px-4 py-2 rounded bg-[#07090b]/80 backdrop-blur-md border border-[#d4af37]/40 text-xs font-mono text-[#d4af37] font-bold uppercase tracking-widest flex items-center gap-2">
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>AFTER: ALUCURV SLIM SYSTEM</span>
+                <span>AFTER: ALUCURVE SLIM SYSTEM</span>
               </div>
             </div>
 
@@ -146,7 +146,7 @@ export const BeforeAfterSlider: React.FC = () => {
             </div>
 
             <div className="p-6 rounded-xl bg-[#181c22] border border-[#d4af37]/30">
-              <div className="text-xs uppercase font-mono text-[#d4af37] mb-2">[ AFTER ALUCURV SYSTEM ]</div>
+              <div className="text-xs uppercase font-mono text-[#d4af37] mb-2">[ AFTER ALUCURVE SYSTEM ]</div>
               <ul className="space-y-2 text-xs text-slate-200">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#d4af37]" />

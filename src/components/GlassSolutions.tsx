@@ -89,7 +89,7 @@ export const GlassSolutions: React.FC = () => {
                 </div>
 
                 <a
-                  href={getWhatsAppUrl(`Hello Alucurv, I am interested in your ${glass.title} for my project.`)}
+                  href={getWhatsAppUrl(`Hello Alucurve, I am interested in your ${glass.title} for my project.`)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 text-xs font-bold text-[#d4af37] hover:text-white transition-colors group/btn uppercase tracking-wider"

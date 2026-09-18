@@ -28,7 +28,7 @@ export default function Home() {
       {/* Brand Statement Reveal */}
       <BrandStatement />
 
-      {/* About Alucurv */}
+      {/* About Alucurve */}
       <AboutSection />
 
       {/* Products & Solutions Showcase */}
@@ -37,7 +37,7 @@ export default function Home() {
       {/* Signature Interactive Window Showcase */}
       <InteractiveWindow />
 
-      {/* Why Alucurv Feature Pillars */}
+      {/* Why Alucurve Feature Pillars */}
       <WhyAlucurv />
 
       {/* Architectural Project Portfolio */}

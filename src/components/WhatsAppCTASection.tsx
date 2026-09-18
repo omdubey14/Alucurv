@@ -17,7 +17,7 @@ const projectOptions = [
 export const WhatsAppCTASection: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState<string>(projectOptions[0]);
 
-  const customMessage = `Hello Alucurv team, I am planning a project for: '${selectedOption}'. Please share details, profile samples, and estimation guidance.`;
+  const customMessage = `Hello Alucurve team, I am planning a project for: '${selectedOption}'. Please share details, profile samples, and estimation guidance.`;
 
   return (
     <section className="py-24 lg:py-36 bg-[#07090b] relative overflow-hidden border-t border-white/10">

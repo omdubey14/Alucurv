@@ -130,7 +130,7 @@ export const HeroSection: React.FC = () => {
 
             <a
               href={getWhatsAppUrl(
-                "Hello Alucurv, I am exploring your website and would like to chat about aluminium system windows for my project."
+                "Hello Alucurve, I am exploring your website and would like to chat about aluminium system windows for my project."
               )}
               target="_blank"
               rel="noopener noreferrer"

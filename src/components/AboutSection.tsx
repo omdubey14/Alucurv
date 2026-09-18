@@ -22,7 +22,7 @@ export const AboutSection: React.FC = () => {
             >
               <img
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"
-                alt="Alucurv Architectural Glass and Aluminium Profile Engineering"
+                alt="Alucurve Architectural Glass and Aluminium Profile Engineering"
                 className="w-full h-[450px] sm:h-[550px] object-cover filter contrast-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#07090b] via-transparent to-transparent opacity-80" />
@@ -82,7 +82,7 @@ export const AboutSection: React.FC = () => {
               transition={{ duration: 0.6 }}
             >
               <div className="text-xs uppercase tracking-[0.35em] text-[#d4af37] font-semibold mb-4">
-                [ ABOUT ALUCURV ]
+                [ ABOUT ALUCURVE ]
               </div>
 
               <h2 className="text-3xl sm:text-5xl font-black uppercase text-white tracking-tight leading-tight mb-6">
@@ -128,7 +128,7 @@ export const AboutSection: React.FC = () => {
             {/* Action CTA */}
             <div className="flex items-center gap-4">
               <a
-                href={getWhatsAppUrl("Hello Alucurv, I would like to discuss an aluminium/glass solution for my project.")}
+                href={getWhatsAppUrl("Hello Alucurve, I would like to discuss an aluminium/glass solution for my project.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3.5 rounded bg-[#d4af37] text-slate-950 font-bold uppercase tracking-wider text-xs hover:bg-yellow-400 transition-all shadow-lg"

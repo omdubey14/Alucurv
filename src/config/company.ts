@@ -37,35 +37,35 @@ export interface CompanyConfig {
 }
 
 export const companyConfig: CompanyConfig = {
-  name: "Alucurv Aluminium System Window Pvt. Ltd.",
-  shortName: "ALUCURV",
+  name: "Alucurve Aluminium System Window Pvt. Ltd.",
+  shortName: "ALUCURVE",
   tagline: "Aluminium Systems. Architectural Glass. Modern Living.",
   description:
-    "Alucurv is a premier aluminium and glass solutions company specializing in manufacturing, engineering, and installing high-performance aluminium system windows, minimal sliding doors, structural curtain walls, and luxury architectural glass.",
+    "Alucurve is a premier aluminium and glass solutions company specializing in manufacturing, engineering, and installing high-performance aluminium system windows, minimal sliding doors, structural curtain walls, and luxury architectural glass.",
   phone: "+91 75669 31008",
   phoneRaw: "+917566931008",
   whatsappNumber: "917566931008", // Clean E.164 digits without + or spaces
   whatsappFormatted: "+91 75669 31008",
-  email: "info@alucurv.com",
+  email: "info@alucurve.com",
   address: {
     street: "Plot No. 42, Architectural & Industrial Zone",
     area: "Phase II",
-    city: "Mumbai / NCR",
-    state: "Maharashtra",
+    city: "Indore",
+    state: "Madhya Pradesh",
     country: "India",
-    full: "Plot No. 42, Architectural & Industrial Zone, Phase II, Commercial Hub, India",
+    full: "Plot No. 42, Architectural & Industrial Zone, Phase II, Indore, Madhya Pradesh, India",
   },
-  googleMapsUrl: "https://maps.google.com/?q=Alucurv+Aluminium+System+Window",
+  googleMapsUrl: "https://maps.google.com/?q=Alucurve+Aluminium+System+Window",
   businessHours: {
     weekdays: "09:30 AM – 07:00 PM",
-    saturday: "10:00 AM – 05:00 PM",
+    saturday: "10:00 AM – 07:00 PM",
     sunday: "Closed (By Appointment)",
   },
   social: {
-    instagram: "https://instagram.com/alucurv_official",
-    facebook: "https://facebook.com/alucurvsystems",
-    linkedin: "https://linkedin.com/company/alucurv",
-    youtube: "https://youtube.com/@alucurvsystems",
+    instagram: "https://instagram.com/alucurve_official",
+    facebook: "https://facebook.com/alucurvesystems",
+    linkedin: "https://linkedin.com/company/alucurve",
+    youtube: "https://youtube.com/@alucurvesystems",
   },
   stats: [
     {
@@ -100,7 +100,7 @@ export const companyConfig: CompanyConfig = {
  */
 export function getWhatsAppUrl(message?: string): string {
   const defaultText =
-    "Hello Alucurv team, I would like to enquire about your premium aluminium system windows and glass solutions. Please share more details.";
+    "Hello Alucurve team, I would like to enquire about your premium aluminium system windows and architectural solutions. Please share more details.";
   const encodedText = encodeURIComponent(message || defaultText);
   
   // Strip any spaces, dashes, brackets or symbols so WhatsApp receives valid digits
@@ -115,11 +115,11 @@ export function getWhatsAppUrl(message?: string): string {
 }
 
 export function getProductWhatsAppUrl(productName: string): string {
-  const text = `Hello Alucurv team, I am interested in your ${productName}. Please share technical details, custom options, and pricing estimation.`;
+  const text = `Hello Alucurve team, I am interested in your ${productName}. Please share technical details, custom options, and pricing estimation.`;
   return getWhatsAppUrl(text);
 }
 
 export function getProjectWhatsAppUrl(projectTitle: string): string {
-  const text = `Hello Alucurv team, I saw your project '${projectTitle}' on your website and would like a similar aluminium & glass solution for my project.`;
+  const text = `Hello Alucurve team, I saw your project '${projectTitle}' on your website and would like a similar aluminium & architectural solution for my project.`;
   return getWhatsAppUrl(text);
 }

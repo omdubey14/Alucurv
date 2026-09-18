@@ -9,7 +9,7 @@ export const productsData: Product[] = [
     description:
       "Engineered slim-profile aluminium windows engineered to seamlessly connect indoor living with the exterior landscape while ensuring structural rigidity and weather sealing.",
     longDescription:
-      "Alucurv Aluminium Windows combine ultra-thin sightlines with structural thermal breaks. Designed for extreme durability and effortless operation, our windows are engineered with high-density EPDM gaskets and multi-point locking hardware for total peace of mind.",
+      "Alucurve Aluminium Windows combine ultra-thin sightlines with structural thermal breaks. Designed for extreme durability and effortless operation, our windows are engineered with high-density EPDM gaskets and multi-point locking hardware for total peace of mind.",
     imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "Profile Width", value: "Thin 25mm – 42mm sightline" },
@@ -84,7 +84,7 @@ export const productsData: Product[] = [
     description:
       "Custom pivot, single, and double leaf entrance doors with integrated smart access and robust aluminium framing.",
     longDescription:
-      "Alucurv main entrance doors blend security with high design. Featuring oversized pivot hinges capable of holding 250kg doors, custom metal panel textures, and flush glass integration, these doors set the tone for luxury architecture.",
+      "Alucurve main entrance doors blend security with high design. Featuring oversized pivot hinges capable of holding 250kg doors, custom metal panel textures, and flush glass integration, these doors set the tone for luxury architecture.",
     imageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "Door Types", value: "Offset Pivot, Heavy Swing, Flush Panel" },
@@ -109,7 +109,7 @@ export const productsData: Product[] = [
     description:
       "Telescopic multi-track sliding door systems that disappear entirely into wall pockets for maximum clearance.",
     longDescription:
-      "Experience true spatial freedom with Alucurv sliding door systems. Available in 2, 3, or 4-track configurations, panels can slide open side-by-side or hide into wall pockets to transform enclosed spaces into open-air verandas.",
+      "Experience true spatial freedom with Alucurve sliding door systems. Available in 2, 3, or 4-track configurations, panels can slide open side-by-side or hide into wall pockets to transform enclosed spaces into open-air verandas.",
     imageUrl: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "Track Options", value: "Mono, Double, Triple, Quad Track" },
@@ -159,7 +159,7 @@ export const productsData: Product[] = [
     description:
       "High-performance glass work engineered for solar control, acoustic silencing, structural safety, and daylight transmission.",
     longDescription:
-      "Glass is the core of modern architecture. Alucurv supplies and installs advanced glass solutions ranging from double Low-E glazed units that cut solar heat gain by up to 75% to acoustic PVB laminated partitions and frameless shower enclosures.",
+      "Glass is the core of modern architecture. Alucurve supplies and installs advanced glass solutions ranging from double Low-E glazed units that cut solar heat gain by up to 75% to acoustic PVB laminated partitions and frameless shower enclosures.",
     imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "Glass Types", value: "Toughened, Laminated, Low-E, Tinted, Acoustic" },
@@ -184,7 +184,7 @@ export const productsData: Product[] = [
     description:
       "Continuous external glass & aluminium facade envelopes that protect buildings from elements while creating striking exteriors.",
     longDescription:
-      "Alucurv curtain wall systems allow architects to create soaring glass facades with minimal visible structural support. Available in stick-built systems for bespoke geometry or unitized factory-assembled modules for rapid tower installation.",
+      "Alucurve curtain wall systems allow architects to create soaring glass facades with minimal visible structural support. Available in stick-built systems for bespoke geometry or unitized factory-assembled modules for rapid tower installation.",
     imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "System Types", value: "Unitized Module & Stick Curtain Wall" },
@@ -209,7 +209,7 @@ export const productsData: Product[] = [
     description:
       "Bespoke engineering for complex architectural geometries, curved glass profiles, custom sunshades, and operable glass roofs.",
     longDescription:
-      "When standard products fall short, Alucurv’s custom design division steps in. We work hand-in-hand with architects and structural engineers to conceptualize, mock up, and fabricate one-of-a-kind glass skywalks, motorized pergolas, curved window frames, and kinetic aluminium shading facades.",
+      "When standard products fall short, Alucurve’s custom design division steps in. We work hand-in-hand with architects and structural engineers to conceptualize, mock up, and fabricate one-of-a-kind glass skywalks, motorized pergolas, curved window frames, and kinetic aluminium shading facades.",
     imageUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "Customization", value: "100% Bespoke Geometry & Profile Dies" },
