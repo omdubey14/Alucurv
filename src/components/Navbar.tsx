@@ -14,7 +14,6 @@ const navItems: NavItem[] = [
   { label: "Home", href: "#hero" },
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
-  { label: "Glass Solutions", href: "#glass" },
   { label: "Interactive Demo", href: "#interactive-window" },
   { label: "Projects", href: "#projects" },
   { label: "Why Alucurv", href: "#why-us" },

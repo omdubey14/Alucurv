@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, MapPin, Eye } from "lucide-react";
+import { ArrowUpRight, Eye } from "lucide-react";
 import { projectsData } from "@/data/projects";
 import { ProjectModal } from "./ProjectModal";
 import { Project } from "@/types";
@@ -91,14 +91,9 @@ export const ProjectGallery: React.FC = () => {
 
                 {/* Card Info */}
                 <div className="p-6 sm:p-8">
-                  <h3 className="text-xl font-black uppercase text-white tracking-tight group-hover:text-[#d4af37] transition-colors mb-2">
+                  <h3 className="text-xl font-black uppercase text-white tracking-tight group-hover:text-[#d4af37] transition-colors mb-4">
                     {project.title}
                   </h3>
-
-                  <div className="flex items-center gap-2 text-xs text-slate-400 font-light mb-4">
-                    <MapPin className="w-3.5 h-3.5 text-[#d4af37]" />
-                    <span>{project.location}</span>
-                  </div>
 
                   <p className="text-xs text-slate-300 font-light line-clamp-2 leading-relaxed mb-6">
                     {project.description}

@@ -21,10 +21,10 @@ const pillars: WhyPillar[] = [
     title: "PERFORMANCE",
     headline: "Designed for durability, smooth operation and everyday reliability.",
     description:
-      "Tested against extreme monsoon wind pressures up to 3000 Pa and high urban acoustic noise, delivering decades of maintenance-free operation.",
-    technicalHighlight: "Class 4 Wind & E1050 Water Rating",
+      "Tested against extreme monsoon wind pressures up to 3000 Pa and high urban acoustic noise, backed by our 25-Year Durable Warranty.",
+    technicalHighlight: "25-Year Durable Warranty & Class 4 Wind Rating",
     iconName: "Zap",
-    stats: "3000 Pa Wind Load",
+    stats: "25-Yr Warranty",
   },
   {
     id: "custom-design",

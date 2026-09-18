@@ -88,9 +88,9 @@ export const companyConfig: CompanyConfig = {
     },
     {
       label: "Warranty Coverage",
-      value: "10",
+      value: "25",
       suffix: " Yrs",
-      description: "Guaranteed structural performance & weather sealing",
+      description: "25-year durable warranty on structural performance & weather sealing",
     },
   ],
 };

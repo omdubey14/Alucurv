@@ -150,7 +150,7 @@ export const BeforeAfterSlider: React.FC = () => {
               <ul className="space-y-2 text-xs text-slate-200">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#d4af37]" />
-                  Ultra-slim 20mm interlock profiles & 95% daylight area
+                  Ultra-slim 25mm – 42mm thin profiles & 95% daylight area
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#d4af37]" />
@@ -158,7 +158,7 @@ export const BeforeAfterSlider: React.FC = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-3.5 h-3.5 text-[#d4af37]" />
-                  Anodized marine-grade finish with 10-Year guarantee
+                  Anodized marine-grade finish with 25-Year durable warranty
                 </li>
               </ul>
             </div>

@@ -74,16 +74,16 @@ const processSteps: ProcessStep[] = [
   },
   {
     number: "06",
-    title: "FINAL TESTING & 10-YEAR HANDOVER",
-    subtitle: "Smooth glide testing, lock calibration & warranty issuance.",
+    title: "FINAL TESTING & 25-YEAR HANDOVER",
+    subtitle: "Smooth glide testing, lock calibration & durable warranty issuance.",
     description:
-      "We test panel sliding smoothness, verify multi-point lock engagements, clean glass panes, and hand over the official 10-Year Warranty documentation.",
+      "We test panel sliding smoothness, verify multi-point lock engagements, clean frames, and hand over the official 25-Year Durable Warranty documentation.",
     details: [
       "Operability test for smooth roller movement and lock latching",
-      "Final protective film removal & glass polish",
-      "Handover of 10-Year Frame & Weather Seal Warranty certificate",
+      "Final protective film removal & frame polish",
+      "Handover of 25-Year Frame & Weather Seal Durable Warranty certificate",
     ],
-    visualTag: "10-Year Warranty",
+    visualTag: "25-Year Warranty",
   },
 ];
 

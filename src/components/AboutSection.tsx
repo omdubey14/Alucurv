@@ -108,7 +108,7 @@ export const AboutSection: React.FC = () => {
                 "Grand Pivot & Swing Doors",
                 "Curtain Wall Facade Systems",
                 "Acoustic Glass Partitions",
-                "Toughened & Low-E Glazing",
+                "25-Year Durable Warranty",
                 "Bespoke Architectural Work",
               ].map((capability, idx) => (
                 <motion.div

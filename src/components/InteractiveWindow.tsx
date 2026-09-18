@@ -18,8 +18,8 @@ const hotspots: Hotspot[] = [
     id: "interlock",
     top: "40%",
     left: "48%",
-    title: "20mm Ultra-Slim Interlock",
-    description: "Architectural grade aluminium extrusion with minimal 20mm visible sightline for maximum view clearance.",
+    title: "25mm – 42mm Slim Interlock",
+    description: "Architectural grade aluminium extrusion with minimal 25mm – 42mm visible sightline for maximum view clearance.",
     badge: "Structural Profile",
   },
   {
@@ -59,7 +59,6 @@ const hotspots: Hotspot[] = [
 export const InteractiveWindow: React.FC = () => {
   const [slideOpenPercent, setSlideOpenPercent] = useState(25); // 0% closed, 100% full open
   const [activeHotspot, setActiveHotspot] = useState<Hotspot | null>(hotspots[0]);
-  const [glazingMode, setGlazingMode] = useState<"double" | "single">("double");
 
   return (
     <section id="interactive-window" className="py-24 lg:py-36 bg-[#07090b] relative overflow-hidden border-t border-white/10">
@@ -116,12 +115,8 @@ export const InteractiveWindow: React.FC = () => {
                 {/* Slim Interlock Vertical Bar Accent */}
                 <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-[#d4af37]" />
 
-                {/* Glazing Mode Reflection Overlay */}
-                <div
-                  className={`absolute inset-0 transition-opacity duration-500 ${
-                    glazingMode === "double" ? "bg-gradient-to-tr from-cyan-500/10 via-white/5 to-transparent" : "opacity-30"
-                  }`}
-                />
+                {/* Architectural Glass Reflection Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 via-white/5 to-transparent pointer-events-none" />
 
                 <div className="relative z-10 flex items-center justify-between text-[10px] font-mono text-white/80 bg-black/40 px-2 py-1 rounded backdrop-blur">
                   <span>SLIDING PANEL</span>
@@ -189,58 +184,42 @@ export const InteractiveWindow: React.FC = () => {
             </div>
           </div>
 
-          {/* Right Side: Hotspot Technical Inspector & Glazing Mode Selector */}
+          {/* Right Side: Hotspot Technical Inspector & 25-Year Warranty Showcase */}
           <div className="lg:col-span-4 flex flex-col gap-6">
             
-            {/* Glazing Specification Switcher */}
-            <div className="p-5 rounded-xl bg-[#121519] border border-white/10">
-              <div className="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-3 flex items-center justify-between">
-                <span>Glazing Unit Selection</span>
-                <span className="text-[#d4af37] font-mono text-[10px]">ACOUSTIC & THERMAL</span>
+            {/* 25-Year Durable Warranty Card */}
+            <div className="p-5 rounded-xl bg-[#121519] border border-[#d4af37]/40 shadow-xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#d4af37]/10 rounded-full blur-2xl pointer-events-none" />
+              
+              <div className="text-xs uppercase tracking-wider text-slate-300 font-semibold mb-3 flex items-center justify-between">
+                <span className="flex items-center gap-2 text-white font-bold">
+                  <ShieldCheck className="w-4 h-4 text-[#d4af37]" />
+                  25-Year Durable Warranty
+                </span>
+                <span className="px-2 py-0.5 rounded bg-[#d4af37]/20 text-[#d4af37] font-mono text-[10px] font-bold border border-[#d4af37]/30">
+                  GUARANTEED
+                </span>
               </div>
 
-              <div className="grid grid-cols-2 gap-2 p-1 bg-black/40 rounded-lg border border-white/5">
-                <button
-                  onClick={() => setGlazingMode("double")}
-                  className={`py-2 px-3 rounded text-xs font-semibold uppercase transition-all ${
-                    glazingMode === "double"
-                      ? "bg-[#d4af37] text-slate-950 shadow"
-                      : "text-slate-400 hover:text-white"
-                  }`}
-                >
-                  Low-E Double
-                </button>
-                <button
-                  onClick={() => setGlazingMode("single")}
-                  className={`py-2 px-3 rounded text-xs font-semibold uppercase transition-all ${
-                    glazingMode === "single"
-                      ? "bg-white/20 text-white shadow"
-                      : "text-slate-400 hover:text-white"
-                  }`}
-                >
-                  Standard Single
-                </button>
-              </div>
+              <p className="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                Precision-engineered using 6063-T6 architectural grade aluminium profiles, tested against extreme monsoons, UV oxidation, and structural deflection with guaranteed 25-year durability.
+              </p>
 
-              {/* Dynamic Feedback Performance Metrics */}
-              <div className="mt-4 grid grid-cols-2 gap-3 pt-3 border-t border-white/5">
+              {/* Performance Metrics */}
+              <div className="grid grid-cols-2 gap-3 pt-3 border-t border-white/10">
                 <div className="flex items-center gap-2">
                   <ThermometerSnowflake className="w-4 h-4 text-cyan-400" />
                   <div>
-                    <div className="text-[10px] text-slate-400 uppercase">Solar Heat Cut</div>
-                    <div className="text-xs font-bold text-white">
-                      {glazingMode === "double" ? "72% Solar Cut" : "22% Basic Cut"}
-                    </div>
+                    <div className="text-[10px] text-slate-400 uppercase">Profile Sightline</div>
+                    <div className="text-xs font-bold text-white">25mm – 42mm Thin</div>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Volume2 className="w-4 h-4 text-emerald-400" />
                   <div>
-                    <div className="text-[10px] text-slate-400 uppercase">Noise Reduction</div>
-                    <div className="text-xs font-bold text-white">
-                      {glazingMode === "double" ? "42 dB Noise Cut" : "18 dB Basic Cut"}
-                    </div>
+                    <div className="text-[10px] text-slate-400 uppercase">Acoustic Rating</div>
+                    <div className="text-xs font-bold text-white">Up to 42 dB Cut</div>
                   </div>
                 </div>
               </div>

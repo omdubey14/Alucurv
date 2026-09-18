@@ -151,8 +151,8 @@ export const HeroSection: React.FC = () => {
             <div className="flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-[#d4af37]" />
               <div>
-                <div className="text-xs uppercase font-semibold text-slate-200">10-Year Guarantee</div>
-                <div className="text-[11px] text-slate-400">Weather & Frame Structural</div>
+                <div className="text-xs uppercase font-semibold text-slate-200">25-Year Durable Warranty</div>
+                <div className="text-[11px] text-slate-400">Weather & Structural Guarantee</div>
               </div>
             </div>
 
@@ -160,7 +160,7 @@ export const HeroSection: React.FC = () => {
               <Layers className="w-5 h-5 text-[#d4af37]" />
               <div>
                 <div className="text-xs uppercase font-semibold text-slate-200">Ultra-Slim Interlocks</div>
-                <div className="text-[11px] text-slate-400">20mm Sightline Profiles</div>
+                <div className="text-[11px] text-slate-400">25mm – 42mm Slim Profiles</div>
               </div>
             </div>
 

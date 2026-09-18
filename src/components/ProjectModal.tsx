@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageSquare, MapPin, Calendar, Layers, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { X, MessageSquare, Calendar, Layers, ShieldCheck, ArrowUpRight } from "lucide-react";
 import { Project } from "@/types";
 import { getProjectWhatsAppUrl } from "@/config/company";
 
@@ -68,11 +68,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.title}
               </h3>
               <div className="flex flex-wrap items-center gap-4 text-xs text-slate-400 mt-2 font-light">
-                <span className="flex items-center gap-1.5">
-                  <MapPin className="w-3.5 h-3.5 text-[#d4af37]" />
-                  {project.location}
-                </span>
-                <span>•</span>
                 <span className="flex items-center gap-1.5">
                   <Calendar className="w-3.5 h-3.5 text-[#d4af37]" />
                   Year {project.year}

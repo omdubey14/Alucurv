@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
               Navigation
             </h4>
             <ul className="space-y-2.5 text-xs">
-              {["Home", "About", "Products", "Glass Solutions", "Projects", "Why Alucurv", "Contact"].map((item) => (
+              {["Home", "About", "Products", "Projects", "Why Alucurv", "Contact"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(" ", "-")}`}
