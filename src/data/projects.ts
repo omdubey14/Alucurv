@@ -47,28 +47,7 @@ export const projectsData: Project[] = [
       "Automatic rain-sensor tilt-and-turn ventilation sashes",
     ],
   },
-  {
-    id: "zenith-headquarters",
-    title: "Zenith Corporate Hub",
-    category: "Commercial",
-    location: "Cyber City, NCR",
-    year: "2024",
-    area: "45,000 sq.ft Facade",
-    solutionUsed: "Unitized Curtain Wall System & Solar Control Double Glazing",
-    imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
-    galleryImages: [
-      "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=1600&auto=format&fit=crop",
-    ],
-    description:
-      "An 18-storey flagship corporate headquarters wrapped in an energy-efficient unitized glass facade system engineered for rapid modular construction.",
-    highlights: [
-      "Factory assembled unitized glass panels installed in record 45 days",
-      "Integrated exterior extruded aluminium solar fins for shading",
-      "IGU double glazing with Argon gas filling for low U-Value",
-      "Seismic expansion joints tested for high wind shear forces",
-    ],
-  },
+
   {
     id: "lumina-office",
     title: "Lumina Executive Pavilion",
