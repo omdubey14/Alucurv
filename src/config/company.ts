@@ -37,11 +37,11 @@ export interface CompanyConfig {
 }
 
 export const companyConfig: CompanyConfig = {
-  name: "Alucurve Aluminium System Window Pvt. Ltd.",
+  name: "Alucurve System Window Pvt. Ltd.",
   shortName: "ALUCURVE",
   tagline: "Aluminium Systems. Architectural Glass. Modern Living.",
   description:
-    "Alucurve is a premier aluminium and glass solutions company specializing in manufacturing, engineering, and installing high-performance aluminium system windows, minimal sliding doors, structural curtain walls, and luxury architectural glass.",
+    "Alucurve System Window Pvt. Ltd. is a premier aluminium solutions company specializing in manufacturing, engineering, and installing high-performance aluminium system windows, minimal sliding doors, and structural curtain walls.",
   phone: "+91 75669 31008",
   phoneRaw: "+917566931008",
   whatsappNumber: "917566931008", // Clean E.164 digits without + or spaces
@@ -55,7 +55,7 @@ export const companyConfig: CompanyConfig = {
     country: "India",
     full: "Plot No. 42, Architectural & Industrial Zone, Phase II, Indore, Madhya Pradesh, India",
   },
-  googleMapsUrl: "https://maps.google.com/?q=Alucurve+Aluminium+System+Window",
+  googleMapsUrl: "https://maps.google.com/?q=Alucurve+System+Window+Pvt+Ltd",
   businessHours: {
     weekdays: "09:30 AM – 07:00 PM",
     saturday: "10:00 AM – 07:00 PM",

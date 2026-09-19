@@ -76,8 +76,8 @@ export const Navbar: React.FC = () => {
               </span>
               <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
             </div>
-            <span className="text-[10px] tracking-[0.3em] text-slate-400 font-light uppercase hidden sm:block">
-              Aluminium Systems & Glass
+            <span className="text-[10px] tracking-[0.2em] text-[#d4af37] font-light uppercase hidden sm:block">
+              System Window Pvt. Ltd.
             </span>
           </a>
 

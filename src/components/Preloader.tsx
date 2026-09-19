@@ -89,7 +89,7 @@ export const Preloader: React.FC = () => {
               transition={{ duration: 0.7, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-xs md:text-sm tracking-[0.35em] text-slate-400 font-light uppercase"
             >
-              Aluminium System Windows
+              System Window Pvt. Ltd.
             </motion.p>
           </div>
 

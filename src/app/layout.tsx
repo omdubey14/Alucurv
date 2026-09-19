@@ -8,10 +8,11 @@ import { ScrollProgress } from "@/components/ScrollProgress";
 import { JsonLd } from "@/components/SEO/JsonLd";
 
 export const metadata: Metadata = {
-  title: "Alucurve Aluminium System Windows | Premium Aluminium Systems",
+  title: "Alucurve System Window Pvt. Ltd. | Premium Aluminium Systems",
   description:
-    "Alucurve Aluminium System Window Pvt. Ltd. provides premium aluminium windows, doors, minimal sliding systems, and curtain walls for modern residential and commercial spaces.",
+    "Alucurve System Window Pvt. Ltd. provides premium aluminium windows, doors, minimal sliding systems, and curtain walls for modern residential and commercial spaces.",
   keywords: [
+    "Alucurve System Window Pvt. Ltd.",
     "Aluminium System Windows",
     "Minimal Sliding Doors",
     "Aluminium Window Manufacturer",
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: companyConfig.name }],
   openGraph: {
-    title: "Alucurve Aluminium System Windows | Architectural Systems",
+    title: "Alucurve System Window Pvt. Ltd. | Architectural Systems",
     description:
       "Engineered aluminium windows, minimal sliding doors and architectural systems for modern living.",
     url: "https://www.alucurve.com",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
         url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200",
         width: 1200,
         height: 630,
-        alt: "Alucurve Premium Aluminium Windows",
+        alt: "Alucurve System Window Pvt. Ltd. - Premium Aluminium Windows",
       },
     ],
     locale: "en_US",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alucurve Aluminium System Windows",
+    title: "Alucurve System Window Pvt. Ltd.",
     description: "Premium aluminium windows, doors and architectural systems for modern architecture.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200"],
   },

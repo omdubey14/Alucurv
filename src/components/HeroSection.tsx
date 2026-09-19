@@ -84,8 +84,8 @@ export const HeroSection: React.FC = () => {
             className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#d4af37]" />
-            <span className="text-xs uppercase tracking-[0.3em] text-slate-300 font-medium">
-              ALUMINIUM × GLASS × ARCHITECTURE
+            <span className="text-xs uppercase tracking-[0.25em] text-[#d4af37] font-semibold">
+              ALUCURVE SYSTEM WINDOW PVT. LTD.
             </span>
           </motion.div>
 

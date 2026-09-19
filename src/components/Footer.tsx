@@ -18,9 +18,14 @@ export const Footer: React.FC = () => {
           
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-2xl font-black tracking-[0.2em] text-white">ALUCURVE</span>
-              <span className="w-2 h-2 rounded-full bg-[#d4af37]" />
+            <div className="flex flex-col gap-1">
+              <div className="flex items-center gap-2">
+                <span className="text-2xl font-black tracking-[0.2em] text-white">ALUCURVE</span>
+                <span className="w-2 h-2 rounded-full bg-[#d4af37]" />
+              </div>
+              <span className="text-[11px] font-mono tracking-widest text-[#d4af37] uppercase">
+                System Window Pvt. Ltd.
+              </span>
             </div>
             <p className="text-xs text-[#d4af37] font-mono uppercase tracking-wider">
               {companyConfig.tagline}
