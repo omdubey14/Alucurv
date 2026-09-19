@@ -13,6 +13,7 @@ export interface CompanyConfig {
     area: string;
     city: string;
     state: string;
+    pincode: string;
     country: string;
     full: string;
   };
@@ -48,14 +49,15 @@ export const companyConfig: CompanyConfig = {
   whatsappFormatted: "+91 75669 31008",
   email: "info@alucurve.com",
   address: {
-    street: "Plot No. 42, Architectural & Industrial Zone",
-    area: "Phase II",
+    street: "Flat No. 107, High Street Apartment",
+    area: "Omaxe City 2",
     city: "Indore",
     state: "Madhya Pradesh",
+    pincode: "453771",
     country: "India",
-    full: "Plot No. 42, Architectural & Industrial Zone, Phase II, Indore, Madhya Pradesh, India",
+    full: "Flat No. 107, High Street Apartment, Omaxe City 2, Indore, Madhya Pradesh - 453771",
   },
-  googleMapsUrl: "https://maps.google.com/?q=Alucurve+System+Window+Pvt+Ltd",
+  googleMapsUrl: "https://maps.google.com/?q=High+Street+Apartment+Omaxe+City+2+Indore+453771",
   businessHours: {
     weekdays: "09:30 AM – 07:00 PM",
     saturday: "10:00 AM – 07:00 PM",

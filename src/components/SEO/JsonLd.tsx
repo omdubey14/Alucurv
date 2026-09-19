@@ -35,9 +35,10 @@ export const JsonLd: React.FC = () => {
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": companyConfig.address.street,
+      "streetAddress": `${companyConfig.address.street}, ${companyConfig.address.area}`,
       "addressLocality": companyConfig.address.city,
       "addressRegion": companyConfig.address.state,
+      "postalCode": companyConfig.address.pincode,
       "addressCountry": companyConfig.address.country
     },
     "openingHoursSpecification": {
