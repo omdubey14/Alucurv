@@ -58,7 +58,7 @@ export const projectsData: Project[] = [
     imageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
     galleryImages: [
       "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1509644851169-2acc08aa25b5?q=80&w=1600&auto=format&fit=crop",
     ],
     description:
       "An 18-storey flagship corporate headquarters wrapped in an energy-efficient unitized glass facade system engineered for rapid modular construction.",

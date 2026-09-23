@@ -135,7 +135,7 @@ export const productsData: Product[] = [
       "Modular system window configurations featuring standardized extrusions for acoustic isolation and monsoon defense.",
     longDescription:
       "System windows are systematically engineered profile solutions where every joint, gasket, corner bracket, and glass bead is precision manufactured according to strict European standard specifications. Tested against water pressure, high wind loads, and thermal stress.",
-    imageUrl: "https://images.unsplash.com/photo-1541888946425-d0fbb186a5b7?q=80&w=1600&auto=format&fit=crop",
+    imageUrl: "https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?q=80&w=1600&auto=format&fit=crop",
     specs: [
       { label: "Profile Alloy", value: "6063-T6 Architectural Grade Aluminium" },
       { label: "Structural Depth", value: "65mm, 75mm, 90mm System Series" },
