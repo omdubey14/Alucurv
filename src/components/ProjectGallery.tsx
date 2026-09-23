@@ -7,7 +7,7 @@ import { projectsData } from "@/data/projects";
 import { ProjectModal } from "./ProjectModal";
 import { Project } from "@/types";
 
-const categories = ["All", "Villa", "Residential", "Office", "Architectural"] as const;
+const categories = ["All", "Villa", "Residential", "Commercial", "Office", "Architectural"] as const;
 
 export const ProjectGallery: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
