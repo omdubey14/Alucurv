@@ -2,39 +2,99 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, Menu, X, ArrowUpRight, Phone } from "lucide-react";
+import {
+  MessageSquare,
+  Menu,
+  X,
+  ArrowUpRight,
+  Phone,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
 import { companyConfig, getWhatsAppUrl } from "@/config/company";
 
 interface NavItem {
   label: string;
   href: string;
+  id: string;
 }
 
 const navItems: NavItem[] = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Interactive Demo", href: "#interactive-window" },
-  { label: "Projects", href: "#projects" },
-  { label: "Why Alucurve", href: "#why-us" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "#hero", id: "hero" },
+  { label: "About", href: "#about", id: "about" },
+  { label: "Products", href: "#products", id: "products" },
+  { label: "Interactive Demo", href: "#interactive-window", id: "interactive-window" },
+  { label: "Projects", href: "#projects", id: "projects" },
+  { label: "Why Alucurve", href: "#why-us", id: "why-us" },
+  { label: "Contact", href: "#contact", id: "contact" },
 ];
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
+  const [scrollPercent, setScrollPercent] = useState(0);
+  const [activeSection, setActiveSection] = useState("hero");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
+    const sectionIds = [
+      "hero",
+      "about",
+      "products",
+      "interactive-window",
+      "projects",
+      "why-us",
+      "contact",
+    ];
+
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      const scrollPos = window.scrollY;
+      setScrolled(scrollPos > 30);
+
+      // Scroll progress tracking
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      if (height > 0) {
+        setScrollPercent(Math.min(100, Math.max(0, (winScroll / height) * 100)));
+      }
+
+      // ScrollSpy: identify the active visible section
+      const offset = 140;
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (scrollPos >= top - offset) {
+            setActiveSection(sectionIds[i]);
+            break;
+          }
+        }
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileMenuOpen]);
+
+  // Close mobile drawer on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -45,8 +105,8 @@ export const Navbar: React.FC = () => {
       const globalLenis = (window as unknown as { lenis?: { scrollTo: (el: Element, opts?: object) => void } }).lenis;
       if (globalLenis) {
         globalLenis.scrollTo(target, {
-          offset: -80,
-          duration: 1.3,
+          offset: -85,
+          duration: 1.2,
         });
       } else {
         target.scrollIntoView({ behavior: "smooth" });
@@ -57,128 +117,279 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-500 ease-out ${
           scrolled
-            ? "bg-[#07090b]/85 backdrop-blur-xl border-b border-white/10 py-3 shadow-2xl"
-            : "bg-transparent py-6"
+            ? "top-2 sm:top-3 px-3 sm:px-6"
+            : "top-0 px-4 sm:px-6 lg:px-8 py-3 sm:py-5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
+        <div
+          className={`mx-auto transition-all duration-500 ease-out ${
+            scrolled
+              ? "max-w-6xl rounded-2xl bg-[#07090b]/85 backdrop-blur-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.85)] px-4 sm:px-6 py-2.5"
+              : "max-w-7xl bg-transparent py-1"
+          } flex items-center justify-between relative`}
+        >
+          {/* Subtle Top Specular Reflection Line on Scrolled Capsule */}
+          {scrolled && (
+            <div className="absolute top-0 left-12 right-12 h-[1px] bg-gradient-to-r from-transparent via-[#d4af37]/40 to-transparent pointer-events-none" />
+          )}
+
+          {/* Brand Logo & Monogram */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="group flex flex-col focus:outline-none"
+            className="group flex items-center gap-3 focus:outline-none select-none"
+            aria-label="Alucurve System Window Pvt. Ltd. Home"
           >
-            <div className="flex items-center gap-2">
-              <span className="text-xl md:text-2xl font-black tracking-[0.2em] text-white group-hover:text-[#d4af37] transition-colors">
-                ALUCURVE
-              </span>
-              <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
+            {/* Precision Architectural SVG Monogram */}
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/15 group-hover:border-[#d4af37]/50 transition-colors shadow-sm">
+              <svg
+                className="w-5 h-5 sm:w-5.5 sm:h-5.5"
+                viewBox="0 0 36 36"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <linearGradient id="aluGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#fef08a" />
+                    <stop offset="50%" stopColor="#d4af37" />
+                    <stop offset="100%" stopColor="#b3821a" />
+                  </linearGradient>
+                </defs>
+                {/* Structural Profile Frame */}
+                <rect
+                  x="3"
+                  y="3"
+                  width="30"
+                  height="30"
+                  rx="6"
+                  stroke="url(#aluGoldGrad)"
+                  strokeWidth="2"
+                />
+                {/* Center Mullion Divider */}
+                <line
+                  x1="18"
+                  y1="3"
+                  x2="18"
+                  y2="33"
+                  stroke="url(#aluGoldGrad)"
+                  strokeWidth="1.2"
+                  strokeDasharray="2 2"
+                  opacity="0.7"
+                />
+                {/* Architectural Curve Silhouette */}
+                <path
+                  d="M7 27C7 16.5 15.5 8 26 8"
+                  stroke="url(#aluGoldGrad)"
+                  strokeWidth="2.2"
+                  strokeLinecap="round"
+                />
+                <circle cx="26" cy="8" r="2" fill="url(#aluGoldGrad)" />
+              </svg>
             </div>
-            <span className="text-[10px] tracking-[0.2em] text-[#d4af37] font-light uppercase hidden sm:block">
-              System Window Pvt. Ltd.
-            </span>
+
+            <div className="flex flex-col">
+              <div className="flex items-center gap-2">
+                <span className="text-lg sm:text-xl font-black tracking-[0.2em] text-white group-hover:text-[#d4af37] transition-colors">
+                  ALUCURVE
+                </span>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse" />
+              </div>
+              <span className="text-[9px] sm:text-[10px] tracking-[0.22em] text-[#d4af37] font-medium uppercase leading-tight">
+                System Window Pvt. Ltd.
+              </span>
+            </div>
           </a>
 
-          {/* Desktop Nav Items */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(e) => handleNavClick(e, item.href)}
-                className="text-xs uppercase tracking-[0.15em] text-slate-300 hover:text-[#d4af37] transition-colors relative py-1 font-medium group"
-              >
-                {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#d4af37] transition-all duration-300 group-hover:w-full" />
-              </a>
-            ))}
+          {/* Desktop Nav Items with Framer Motion Active Pill */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-white/[0.03] border border-white/8 rounded-xl p-1 backdrop-blur-md">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.id;
+              return (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => handleNavClick(e, item.href)}
+                  className={`relative text-[11px] xl:text-xs uppercase tracking-[0.14em] px-3 py-1.5 rounded-lg transition-colors font-medium select-none ${
+                    isActive ? "text-[#d4af37] font-semibold" : "text-slate-300 hover:text-white"
+                  }`}
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="activeNavPill"
+                      className="absolute inset-0 bg-[#d4af37]/12 border border-[#d4af37]/35 rounded-lg shadow-[0_0_12px_rgba(212,175,55,0.18)]"
+                      transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.label}</span>
+                </a>
+              );
+            })}
           </nav>
 
-          {/* Desktop Right Action Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={`tel:${companyConfig.phoneRaw}`}
-              className="flex items-center gap-2 text-xs uppercase tracking-wider text-slate-300 hover:text-white transition-colors py-2 px-3 rounded border border-white/10 hover:border-white/30"
-            >
-              <Phone className="w-3.5 h-3.5 text-[#d4af37]" />
-              <span>Call Us</span>
-            </a>
-
+          {/* Desktop Right Action Hub */}
+          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3">
+            {/* Live WhatsApp Quick Pill */}
             <a
               href={getWhatsAppUrl(
                 "Hello Alucurve, I am interested in getting an architectural quote for aluminium system windows."
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded bg-[#d4af37] text-slate-950 text-xs font-bold uppercase tracking-wider overflow-hidden hover:bg-yellow-400 transition-all shadow-lg shadow-[#d4af37]/20"
+              className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] uppercase tracking-wider text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 transition-all group"
+              title="Quick Consultation via WhatsApp"
             >
-              <MessageSquare className="w-4 h-4 text-slate-950" />
-              <span>Get a Quote</span>
-              <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+              </span>
+              <span className="font-semibold">WhatsApp</span>
+            </a>
+
+            {/* Quick Call Button */}
+            <a
+              href={`tel:${companyConfig.phoneRaw}`}
+              className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-slate-300 hover:text-white transition-colors py-2 px-3 rounded-lg border border-white/10 hover:border-white/25 hover:bg-white/5"
+              title={`Call ${companyConfig.phone}`}
+            >
+              <Phone className="w-3.5 h-3.5 text-[#d4af37]" />
+              <span className="font-medium">Call Us</span>
+            </a>
+
+            {/* Shimmer Get a Quote CTA Button */}
+            <a
+              href="#contact"
+              onClick={(e) => handleNavClick(e, "#contact")}
+              className="relative inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#d4af37] via-amber-300 to-[#d4af37] text-slate-950 text-xs font-bold uppercase tracking-wider overflow-hidden hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] group active:scale-95"
+            >
+              {/* Shimmer Sweep Effect */}
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out pointer-events-none" />
+              <MessageSquare className="w-3.5 h-3.5 text-slate-950 relative z-10" />
+              <span className="relative z-10">Get a Quote</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-slate-950 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </a>
           </div>
 
-          {/* Mobile Menu Toggle Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-slate-200 hover:text-white rounded-lg focus:outline-none"
-            aria-label="Toggle Navigation Menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Right Controls */}
+          <div className="flex lg:hidden items-center gap-2">
+            <a
+              href={`tel:${companyConfig.phoneRaw}`}
+              className="p-2 text-[#d4af37] bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
+              aria-label="Call Alucurve"
+            >
+              <Phone className="w-4 h-4" />
+            </a>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-2 text-slate-200 hover:text-[#d4af37] rounded-lg border border-white/10 hover:border-white/20 hover:bg-white/5 focus:outline-none transition-colors"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </button>
+          </div>
+
+          {/* Subtle Reading Progress Line at Base of Scrolled Island */}
+          {scrolled && (
+            <div className="absolute bottom-0 left-4 right-4 h-[1.5px] bg-white/5 rounded-full overflow-hidden pointer-events-none">
+              <div
+                className="h-full bg-gradient-to-r from-[#d4af37] via-amber-300 to-[#d4af37] transition-all duration-100 ease-out"
+                style={{ width: `${scrollPercent}%` }}
+              />
+            </div>
+          )}
         </div>
       </header>
 
-      {/* Mobile Drawer Menu */}
+      {/* Luxury Mobile Navigation Drawer */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: "-100%" }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="fixed inset-0 z-40 bg-[#07090b]/98 backdrop-blur-2xl flex flex-col justify-between pt-24 pb-8 px-6 lg:hidden"
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-40 bg-[#07090b]/98 backdrop-blur-3xl flex flex-col justify-between pt-24 pb-8 px-6 lg:hidden overflow-y-auto"
           >
+            {/* Header info in drawer */}
             <div className="flex flex-col gap-6">
-              <span className="text-xs uppercase tracking-[0.3em] text-[#d4af37] font-semibold border-b border-white/10 pb-2">
-                Navigation
-              </span>
-              {navItems.map((item, idx) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + idx * 0.05 }}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                  className="text-xl font-light text-slate-200 hover:text-[#d4af37] tracking-wider uppercase flex items-center justify-between group"
-                >
-                  <span>{item.label}</span>
-                  <ArrowUpRight className="w-5 h-5 text-slate-500 group-hover:text-[#d4af37] transition-colors" />
-                </motion.a>
-              ))}
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <span className="text-[11px] uppercase tracking-[0.25em] text-[#d4af37] font-semibold">
+                  Architectural Navigation
+                </span>
+                <span className="flex items-center gap-1.5 text-[10px] uppercase tracking-wider text-slate-400">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#d4af37]" />
+                  <span>25Y Warranty</span>
+                </span>
+              </div>
+
+              {/* Numbered Menu Links */}
+              <div className="flex flex-col gap-2">
+                {navItems.map((item, idx) => {
+                  const isActive = activeSection === item.id;
+                  const itemNumber = `0${idx + 1}`;
+                  return (
+                    <motion.a
+                      key={item.href}
+                      href={item.href}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.08 + idx * 0.04 }}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                      className={`py-2.5 px-3 rounded-xl flex items-center justify-between transition-all ${
+                        isActive
+                          ? "bg-[#d4af37]/10 border border-[#d4af37]/30 text-white font-medium"
+                          : "text-slate-300 hover:text-white hover:bg-white/5"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs font-mono text-[#d4af37]/70">{itemNumber}</span>
+                        <span className="text-base tracking-wider uppercase">{item.label}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {isActive && (
+                          <span className="w-2 h-2 rounded-full bg-[#d4af37] animate-pulse" />
+                        )}
+                        <ArrowUpRight className="w-4 h-4 text-slate-500" />
+                      </div>
+                    </motion.a>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="flex flex-col gap-4 border-t border-white/10 pt-6">
+            {/* Mobile Footer & Quick Actions */}
+            <div className="flex flex-col gap-4 border-t border-white/10 pt-6 mt-6">
+              {/* WhatsApp Primary CTA */}
               <a
-                href={getWhatsAppUrl("Hello Alucurve, I would like to request an architectural consultation via WhatsApp.")}
+                href={getWhatsAppUrl(
+                  "Hello Alucurve, I would like to request an architectural consultation via WhatsApp."
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-3 py-4 rounded-lg bg-[#25D366] text-white font-bold uppercase tracking-wider text-sm shadow-xl"
+                className="w-full flex items-center justify-center gap-3 py-3.5 rounded-xl bg-[#25D366] text-white font-bold uppercase tracking-wider text-xs shadow-lg shadow-emerald-500/20 active:scale-98 transition-transform"
               >
-                <MessageSquare className="w-5 h-5" />
+                <MessageSquare className="w-4 h-4" />
                 <span>Start WhatsApp Enquiry</span>
               </a>
 
+              {/* Direct Call Button */}
               <a
                 href={`tel:${companyConfig.phoneRaw}`}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-lg border border-white/20 text-slate-300 font-medium text-sm"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl border border-white/20 text-slate-200 font-semibold uppercase tracking-wider text-xs hover:bg-white/5 transition-colors"
               >
                 <Phone className="w-4 h-4 text-[#d4af37]" />
                 <span>Call {companyConfig.phone}</span>
               </a>
+
+              {/* Address Badge */}
+              <div className="p-3 rounded-xl bg-white/[0.03] border border-white/8 flex items-start gap-2.5 text-slate-400 text-xs">
+                <MapPin className="w-4 h-4 text-[#d4af37] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">
+                  {companyConfig.address.full}
+                </span>
+              </div>
             </div>
           </motion.div>
         )}
