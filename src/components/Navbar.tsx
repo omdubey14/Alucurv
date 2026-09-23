@@ -15,6 +15,7 @@ import { companyConfig, getWhatsAppUrl } from "@/config/company";
 
 interface NavItem {
   label: string;
+  shortLabel?: string;
   href: string;
   id: string;
 }
@@ -23,9 +24,9 @@ const navItems: NavItem[] = [
   { label: "Home", href: "#hero", id: "hero" },
   { label: "About", href: "#about", id: "about" },
   { label: "Products", href: "#products", id: "products" },
-  { label: "Interactive Demo", href: "#interactive-window", id: "interactive-window" },
+  { label: "Interactive Demo", shortLabel: "Demo", href: "#interactive-window", id: "interactive-window" },
   { label: "Projects", href: "#projects", id: "projects" },
-  { label: "Why Alucurve", href: "#why-us", id: "why-us" },
+  { label: "Why Alucurve", shortLabel: "Why Us", href: "#why-us", id: "why-us" },
   { label: "Contact", href: "#contact", id: "contact" },
 ];
 
@@ -126,9 +127,9 @@ export const Navbar: React.FC = () => {
         <div
           className={`mx-auto transition-all duration-500 ease-out ${
             scrolled
-              ? "max-w-6xl rounded-2xl bg-[#07090b]/85 backdrop-blur-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.85)] px-4 sm:px-6 py-2.5"
+              ? "max-w-7xl rounded-2xl bg-[#07090b]/90 backdrop-blur-2xl border border-white/12 shadow-[0_20px_60px_rgba(0,0,0,0.85)] px-4 sm:px-6 py-2.5"
               : "max-w-7xl bg-transparent py-1"
-          } flex items-center justify-between relative`}
+          } flex items-center justify-between gap-3 relative`}
         >
           {/* Subtle Top Specular Reflection Line on Scrolled Capsule */}
           {scrolled && (
@@ -139,11 +140,11 @@ export const Navbar: React.FC = () => {
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, "#hero")}
-            className="group flex items-center gap-3 focus:outline-none select-none"
+            className="group flex items-center gap-2.5 sm:gap-3 focus:outline-none select-none shrink-0"
             aria-label="Alucurve System Window Pvt. Ltd. Home"
           >
             {/* Precision Architectural SVG Monogram */}
-            <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/15 group-hover:border-[#d4af37]/50 transition-colors shadow-sm">
+            <div className="relative w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/15 group-hover:border-[#d4af37]/50 transition-colors shadow-sm shrink-0">
               <svg
                 className="w-5 h-5 sm:w-5.5 sm:h-5.5"
                 viewBox="0 0 36 36"
@@ -189,29 +190,30 @@ export const Navbar: React.FC = () => {
               </svg>
             </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col shrink-0">
               <div className="flex items-center gap-2">
-                <span className="text-lg sm:text-xl font-black tracking-[0.2em] text-white group-hover:text-[#d4af37] transition-colors">
+                <span className="text-lg sm:text-xl font-black tracking-[0.2em] text-white group-hover:text-[#d4af37] transition-colors whitespace-nowrap">
                   ALUCURVE
                 </span>
                 <span className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse" />
               </div>
-              <span className="text-[9px] sm:text-[10px] tracking-[0.22em] text-[#d4af37] font-medium uppercase leading-tight">
+              <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-[#d4af37] font-medium uppercase leading-tight whitespace-nowrap hidden sm:block">
                 System Window Pvt. Ltd.
               </span>
             </div>
           </a>
 
           {/* Desktop Nav Items with Framer Motion Active Pill */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5 bg-white/[0.03] border border-white/8 rounded-xl p-1 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 bg-white/[0.03] border border-white/8 rounded-xl p-1 backdrop-blur-md shrink-0">
             {navItems.map((item) => {
               const isActive = activeSection === item.id;
+              const displayLabel = item.shortLabel || item.label;
               return (
                 <a
                   key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
-                  className={`relative text-[11px] xl:text-xs uppercase tracking-[0.14em] px-3 py-1.5 rounded-lg transition-colors font-medium select-none ${
+                  className={`relative text-[11px] xl:text-xs uppercase tracking-[0.12em] px-2.5 xl:px-3 py-1.5 rounded-lg transition-colors font-medium select-none shrink-0 whitespace-nowrap ${
                     isActive ? "text-[#d4af37] font-semibold" : "text-slate-300 hover:text-white"
                   }`}
                 >
@@ -222,22 +224,22 @@ export const Navbar: React.FC = () => {
                       transition={{ type: "spring", stiffness: 400, damping: 32 }}
                     />
                   )}
-                  <span className="relative z-10">{item.label}</span>
+                  <span className="relative z-10">{displayLabel}</span>
                 </a>
               );
             })}
           </nav>
 
-          {/* Desktop Right Action Hub */}
-          <div className="hidden lg:flex items-center gap-2.5 xl:gap-3">
-            {/* Live WhatsApp Quick Pill */}
+          {/* Desktop Right Action Hub - Perfectly Sized & Flush */}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-2.5 shrink-0">
+            {/* Live WhatsApp Quick Pill (visible on xl screens) */}
             <a
               href={getWhatsAppUrl(
                 "Hello Alucurve, I am interested in getting an architectural quote for aluminium system windows."
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden xl:inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-[11px] uppercase tracking-wider text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 transition-all group"
+              className="hidden xl:inline-flex items-center gap-2 px-2.5 py-1.5 rounded-lg text-[11px] uppercase tracking-wider text-emerald-400 hover:text-emerald-300 bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/25 transition-all shrink-0 whitespace-nowrap"
               title="Quick Consultation via WhatsApp"
             >
               <span className="relative flex h-2 w-2">
@@ -250,29 +252,32 @@ export const Navbar: React.FC = () => {
             {/* Quick Call Button */}
             <a
               href={`tel:${companyConfig.phoneRaw}`}
-              className="inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-slate-300 hover:text-white transition-colors py-2 px-3 rounded-lg border border-white/10 hover:border-white/25 hover:bg-white/5"
+              className="inline-flex items-center justify-center p-2 xl:px-2.5 xl:py-1.5 rounded-lg border border-white/10 hover:border-white/25 hover:bg-white/5 text-slate-300 hover:text-white transition-colors shrink-0"
               title={`Call ${companyConfig.phone}`}
+              aria-label={`Call ${companyConfig.phone}`}
             >
-              <Phone className="w-3.5 h-3.5 text-[#d4af37]" />
-              <span className="font-medium">Call Us</span>
+              <Phone className="w-3.5 h-3.5 text-[#d4af37] shrink-0" />
+              <span className="hidden xl:inline text-[11px] uppercase tracking-wider font-medium ml-1.5 whitespace-nowrap">
+                Call Us
+              </span>
             </a>
 
-            {/* Shimmer Get a Quote CTA Button */}
+            {/* Shimmer Get a Quote CTA Button - Guaranteed Flush & No Overflow */}
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, "#contact")}
-              className="relative inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#d4af37] via-amber-300 to-[#d4af37] text-slate-950 text-xs font-bold uppercase tracking-wider overflow-hidden hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] group active:scale-95"
+              className="relative inline-flex items-center gap-1.5 sm:gap-2 px-3.5 py-2 rounded-lg bg-gradient-to-r from-[#d4af37] via-amber-300 to-[#d4af37] text-slate-950 text-xs font-bold uppercase tracking-wider overflow-hidden hover:brightness-110 transition-all shadow-[0_0_20px_rgba(212,175,55,0.3)] group active:scale-95 shrink-0 whitespace-nowrap"
             >
               {/* Shimmer Sweep Effect */}
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out pointer-events-none" />
-              <MessageSquare className="w-3.5 h-3.5 text-slate-950 relative z-10" />
-              <span className="relative z-10">Get a Quote</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-slate-950 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              <MessageSquare className="w-3.5 h-3.5 text-slate-950 relative z-10 shrink-0" />
+              <span className="relative z-10 whitespace-nowrap">Get a Quote</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-slate-950 relative z-10 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform shrink-0" />
             </a>
           </div>
 
           {/* Mobile Right Controls */}
-          <div className="flex lg:hidden items-center gap-2">
+          <div className="flex lg:hidden items-center gap-2 shrink-0">
             <a
               href={`tel:${companyConfig.phoneRaw}`}
               className="p-2 text-[#d4af37] bg-white/5 border border-white/10 rounded-lg hover:bg-white/10 transition-colors"
