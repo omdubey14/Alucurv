@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Target, Zap, Palette, Sparkles, ShieldCheck, ChevronDown } from "lucide-react";
+import { Sparkles, ChevronDown } from "lucide-react";
 import { WhyPillar } from "@/types";
 
 const pillars: WhyPillar[] = [
@@ -63,6 +63,8 @@ export const WhyAlucurv: React.FC = () => {
 
   return (
     <section id="why-us" className="py-24 lg:py-36 bg-[#07090b] relative overflow-hidden border-t border-white/10">
+      {/* Anchor for footer/external links referencing #why-alucurve */}
+      <span id="why-alucurve" className="absolute -top-20" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
@@ -74,7 +76,7 @@ export const WhyAlucurv: React.FC = () => {
             WHY <span className="metallic-text">ALUCURVE SYSTEMS</span>
           </h2>
           <p className="text-slate-400 text-sm sm:text-base font-light">
-            We don't assemble off-the-shelf windows. We engineer architectural aluminium solutions built to elevated technical specifications.
+            We don&apos;t assemble off-the-shelf windows. We engineer architectural aluminium solutions built to elevated technical specifications.
           </p>
         </div>
 
@@ -100,7 +102,7 @@ export const WhyAlucurv: React.FC = () => {
                 <div>
                   <div className="flex items-center justify-between mb-6">
                     <span className="text-xs font-mono text-[#d4af37] font-bold tracking-widest uppercase">
-                      0{idx + 1} // {pillar.stats}
+                      0{idx + 1} {"//"} {pillar.stats}
                     </span>
 
                     <div

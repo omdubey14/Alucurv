@@ -1,19 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, createContext, useContext } from "react";
+import React, { useEffect } from "react";
 import Lenis from "lenis";
-
-const SmoothScrollContext = createContext<Lenis | null>(null);
-
-export const useSmoothScroll = () => useContext(SmoothScrollContext);
 
 interface SmoothScrollProps {
   children: React.ReactNode;
 }
 
 export const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
-  const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
     // Respect reduced motion preferences for accessibility
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -31,8 +25,6 @@ export const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
       touchMultiplier: 1.2,
       infinite: false,
     });
-
-    lenisRef.current = lenis;
 
     // Attach to window for global inspection or external control
     (window as unknown as { lenis?: Lenis }).lenis = lenis;
@@ -73,9 +65,5 @@ export const SmoothScroll: React.FC<SmoothScrollProps> = ({ children }) => {
     };
   }, []);
 
-  return (
-    <SmoothScrollContext.Provider value={lenisRef.current}>
-      {children}
-    </SmoothScrollContext.Provider>
-  );
+  return <>{children}</>;
 };

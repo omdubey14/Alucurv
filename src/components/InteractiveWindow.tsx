@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Sliders, Eye, Lock, ShieldCheck, ThermometerSnowflake, Volume2, Sparkles, HelpCircle } from "lucide-react";
+import { motion } from "framer-motion";
+import { Sliders, ShieldCheck, ThermometerSnowflake, Volume2, Sparkles, HelpCircle } from "lucide-react";
 
 interface Hotspot {
   id: string;

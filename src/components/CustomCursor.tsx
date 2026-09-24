@@ -1,14 +1,31 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useSyncExternalStore } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
+
+function subscribeTouch() {
+  return () => {};
+}
+
+function getTouchSnapshot() {
+  if (typeof window === "undefined") return true;
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    window.matchMedia("(pointer: coarse)").matches
+  );
+}
+
+function getTouchServerSnapshot() {
+  return true;
+}
 
 export const CustomCursor: React.FC = () => {
   const [cursorText, setCursorText] = useState("");
   const [isHovered, setIsHovered] = useState(false);
   const [isMouseDown, setIsMouseDown] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(true); // default true until verified client-side
+  const isTouchDevice = useSyncExternalStore(subscribeTouch, getTouchSnapshot, getTouchServerSnapshot);
 
   // Fast GPU-accelerated motion coordinates without triggering React re-renders on mousemove
   const mouseX = useMotionValue(-100);
@@ -23,18 +40,10 @@ export const CustomCursor: React.FC = () => {
   const dotY = useSpring(mouseY, { stiffness: 1800, damping: 65, mass: 0.1 });
 
   useEffect(() => {
-    // Disable on touch / mobile devices
-    const isTouch =
-      "ontouchstart" in window ||
-      navigator.maxTouchPoints > 0 ||
-      window.matchMedia("(pointer: coarse)").matches;
-
-    if (isTouch) {
-      setIsTouchDevice(true);
+    if (isTouchDevice) {
       return;
     }
 
-    setIsTouchDevice(false);
     document.body.classList.add("has-custom-cursor");
 
     const onMouseMove = (e: MouseEvent) => {
@@ -91,7 +100,7 @@ export const CustomCursor: React.FC = () => {
       document.removeEventListener("mouseleave", onMouseLeave);
       document.removeEventListener("mouseenter", onMouseEnter);
     };
-  }, [isVisible, mouseX, mouseY]);
+  }, [isTouchDevice, isVisible, mouseX, mouseY]);
 
   if (isTouchDevice) return null;
 

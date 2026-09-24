@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MessageSquare, Shield, Sun, Sparkles, Layers, ArrowUpRight } from "lucide-react";
+import { Sparkles, ArrowUpRight } from "lucide-react";
 import { glassSolutionsData } from "@/data/glassSolutions";
 import { getWhatsAppUrl } from "@/config/company";
 

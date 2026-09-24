@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, ArrowRight, Check, ShieldAlert, Sparkles, Layers, Sliders } from "lucide-react";
+import { MessageSquare, ArrowRight, Check, Layers, Sliders } from "lucide-react";
 import { productsData } from "@/data/products";
 import { getProductWhatsAppUrl } from "@/config/company";
 
@@ -102,7 +102,7 @@ export const ProductShowcase: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a0c0e] via-transparent to-transparent opacity-80" />
 
                   <div className="absolute top-4 left-4 px-3 py-1.5 rounded bg-[#0a0c0e]/80 backdrop-blur-md border border-white/10 text-xs font-mono text-[#d4af37]">
-                    {activeProduct.categoryNumber} // {activeProduct.tag}
+                    {activeProduct.categoryNumber} {"//"} {activeProduct.tag}
                   </div>
 
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between">

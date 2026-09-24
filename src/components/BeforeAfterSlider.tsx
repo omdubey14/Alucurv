@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
 import { MoveHorizontal, Sparkles, CheckCircle2 } from "lucide-react";
 
 export const BeforeAfterSlider: React.FC = () => {

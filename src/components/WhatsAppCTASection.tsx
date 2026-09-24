@@ -46,7 +46,7 @@ export const WhatsAppCTASection: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl sm:text-6xl lg:text-7xl font-extrabold uppercase tracking-tight text-white leading-tight mb-6"
         >
-          LET'S BUILD SOMETHING <br />
+          LET&apos;S BUILD SOMETHING <br />
           <span className="gold-gradient-text">WORTH LOOKING THROUGH.</span>
         </motion.h2>
 

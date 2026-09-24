@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, MessageSquare, Calendar, Layers, ShieldCheck, ArrowUpRight } from "lucide-react";
+import { X, MessageSquare, Calendar, ShieldCheck } from "lucide-react";
 import { Project } from "@/types";
 import { getProjectWhatsAppUrl } from "@/config/company";
 

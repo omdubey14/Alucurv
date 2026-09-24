@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageSquare, X } from "lucide-react";
+import { MessageSquare } from "lucide-react";
 import { getWhatsAppUrl } from "@/config/company";
 
 export const FloatingWhatsApp: React.FC = () => {

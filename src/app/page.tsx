@@ -5,6 +5,7 @@ import { BrandStatement } from "@/components/BrandStatement";
 import { AboutSection } from "@/components/AboutSection";
 import { ProductShowcase } from "@/components/ProductShowcase";
 import { InteractiveWindow } from "@/components/InteractiveWindow";
+import { GlassSolutions } from "@/components/GlassSolutions";
 import { WhyAlucurv } from "@/components/WhyAlucurv";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
@@ -36,6 +37,9 @@ export default function Home() {
 
       {/* Signature Interactive Window Showcase */}
       <InteractiveWindow />
+
+      {/* Architectural Glass Solutions */}
+      <GlassSolutions />
 
       {/* Why Alucurve Feature Pillars */}
       <WhyAlucurv />

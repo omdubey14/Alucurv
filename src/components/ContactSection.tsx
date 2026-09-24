@@ -162,15 +162,28 @@ export const ContactSection: React.FC = () => {
                   <p className="text-xs text-slate-300 font-light">
                     Thank you, {formData.name}. Our technical engineer will call you shortly at {formData.phone}.
                   </p>
-                  <button
-                    onClick={() => {
-                      setSubmitted(false);
-                      setFormData({ name: "", phone: "", projectType: "Aluminium System Windows", city: "", message: "" });
-                    }}
-                    className="mt-4 px-6 py-2 rounded bg-white/10 text-xs font-semibold text-white uppercase"
-                  >
-                    Submit Another Request
-                  </button>
+                  <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href={getWhatsAppUrl(
+                        `*New Website Callback Request*\n• Name: ${formData.name}\n• Phone: ${formData.phone}\n• Project Type: ${formData.projectType}\n• City: ${formData.city || "Not specified"}\n• Message: ${formData.message || "None"}`
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-3 rounded-lg bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 shadow-lg"
+                    >
+                      <MessageSquare className="w-4 h-4" />
+                      <span>Forward to WhatsApp Desk</span>
+                    </a>
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setFormData({ name: "", phone: "", projectType: "Aluminium System Windows", city: "", message: "" });
+                      }}
+                      className="w-full sm:w-auto px-6 py-3 rounded-lg bg-white/10 text-xs font-semibold text-white uppercase hover:bg-white/15 transition-all"
+                    >
+                      Submit Another
+                    </button>
+                  </div>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
