@@ -43,6 +43,17 @@ export const metadata: Metadata = {
     description: "Premium aluminium windows, doors and architectural systems for modern architecture.",
     images: ["https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: ["/favicon.ico"],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
