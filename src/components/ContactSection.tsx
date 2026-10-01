@@ -16,11 +16,46 @@ export const ContactSection: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
-    setSubmitted(true);
+
+    setIsSubmitting(true);
+
+    const leadMessage = `*New Callback Request - Alucurve*\n\n👤 *Client Name:* ${formData.name}\n📞 *Phone Number:* ${formData.phone}\n🏗️ *Project Type:* ${formData.projectType}\n📍 *City:* ${formData.city || "Not specified"}\n💬 *Project Notes:* ${formData.message || "None"}\n\n_Sent via Alucurve Website (alucurve.in)_`;
+
+    const waUrl = getWhatsAppUrl(leadMessage);
+
+    // 1. Immediately open WhatsApp to client's phone (+91 75669 31008)
+    if (typeof window !== "undefined") {
+      window.open(waUrl, "_blank");
+    }
+
+    // 2. Also send an instant push email notification to alucurvesystemwindow@gmail.com
+    try {
+      await fetch("https://formsubmit.co/ajax/alucurvesystemwindow@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Phone: formData.phone,
+          "Project Type": formData.projectType,
+          City: formData.city || "Not specified",
+          "Message / Notes": formData.message || "No additional notes",
+          _subject: `🔔 New Callback Request: ${formData.name} (${formData.phone})`,
+        }),
+      });
+    } catch (err) {
+      console.error("Form notification error:", err);
+    } finally {
+      setIsSubmitting(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -160,7 +195,7 @@ export const ContactSection: React.FC = () => {
                   <CheckCircle2 className="w-12 h-12 text-emerald-400 mx-auto" />
                   <h4 className="text-xl font-bold uppercase text-white">Callback Request Received</h4>
                   <p className="text-xs text-slate-300 font-light">
-                    Thank you, {formData.name}. Our technical engineer will call you shortly at {formData.phone}.
+                    Thank you, {formData.name}. Your callback request has been sent to our desk at {companyConfig.phone}.
                   </p>
                   <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
                     <a
@@ -172,7 +207,7 @@ export const ContactSection: React.FC = () => {
                       className="w-full sm:w-auto px-6 py-3 rounded-lg bg-[#25D366] text-white text-xs font-bold uppercase tracking-wider hover:bg-emerald-500 transition-all flex items-center justify-center gap-2 shadow-lg"
                     >
                       <MessageSquare className="w-4 h-4" />
-                      <span>Forward to WhatsApp Desk</span>
+                      <span>Chat on WhatsApp (+91 75669 31008)</span>
                     </a>
                     <button
                       onClick={() => {
@@ -264,10 +299,11 @@ export const ContactSection: React.FC = () => {
 
                   <button
                     type="submit"
-                    className="w-full py-4 rounded-lg bg-[#d4af37] text-slate-950 font-bold uppercase tracking-wider text-xs hover:bg-yellow-400 transition-all shadow-xl flex items-center justify-center gap-2"
+                    disabled={isSubmitting}
+                    className="w-full py-4 rounded-lg bg-[#d4af37] text-slate-950 font-bold uppercase tracking-wider text-xs hover:bg-yellow-400 transition-all shadow-xl flex items-center justify-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     <Send className="w-4 h-4" />
-                    <span>Submit Callback Request</span>
+                    <span>{isSubmitting ? "Sending Request to Phone..." : "Submit Callback Request"}</span>
                   </button>
                 </form>
               )}
