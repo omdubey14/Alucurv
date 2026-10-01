@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: "Alucurve System Window Pvt. Ltd. | Architectural Systems",
     description:
       "Engineered aluminium windows, minimal sliding doors and architectural systems for modern living.",
-    url: "https://www.alucurve.com",
+    url: "https://www.alucurve.in",
     siteName: companyConfig.name,
     images: [
       {
