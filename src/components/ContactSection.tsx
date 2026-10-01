@@ -33,9 +33,9 @@ export const ContactSection: React.FC = () => {
       window.open(waUrl, "_blank");
     }
 
-    // 2. Also send an instant push email notification to alucurvesystemwindow@gmail.com
+    // 2. Also send an instant push email notification to sales@alucurve.in and alucurvesystemwindow@gmail.com
     try {
-      await fetch("https://formsubmit.co/ajax/alucurvesystemwindow@gmail.com", {
+      await fetch(`https://formsubmit.co/ajax/${companyConfig.email}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,6 +48,7 @@ export const ContactSection: React.FC = () => {
           City: formData.city || "Not specified",
           "Message / Notes": formData.message || "No additional notes",
           _subject: `🔔 New Callback Request: ${formData.name} (${formData.phone})`,
+          _cc: "alucurvesystemwindow@gmail.com",
         }),
       });
     } catch (err) {
