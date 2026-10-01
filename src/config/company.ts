@@ -47,7 +47,7 @@ export const companyConfig: CompanyConfig = {
   phoneRaw: "+917566931008",
   whatsappNumber: "917566931008", // Clean E.164 digits without + or spaces
   whatsappFormatted: "+91 75669 31008",
-  email: "info@alucurve.com",
+  email: "alucurvesystemwindow@gmail.com",
   address: {
     street: "Flat No. 107, High Street Apartment",
     area: "Omaxe City 2",

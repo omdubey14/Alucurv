@@ -103,7 +103,7 @@ export const ContactSection: React.FC = () => {
                   <div className="text-xs font-mono uppercase text-slate-400">Email Inquiry</div>
                   <a
                     href={`mailto:${companyConfig.email}`}
-                    className="text-sm font-semibold text-slate-100 hover:text-[#d4af37] transition-colors"
+                    className="text-sm font-semibold text-slate-100 hover:text-[#d4af37] transition-colors break-all"
                   >
                     {companyConfig.email}
                   </a>

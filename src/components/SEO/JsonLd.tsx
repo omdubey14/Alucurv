@@ -12,6 +12,7 @@ export const JsonLd: React.FC = () => {
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": companyConfig.phone,
+      "email": companyConfig.email,
       "contactType": "customer service",
       "areaServed": "IN",
       "availableLanguage": ["English", "Hindi"]
@@ -32,6 +33,7 @@ export const JsonLd: React.FC = () => {
     "@id": "https://www.alucurve.com",
     "url": "https://www.alucurve.com",
     "telephone": companyConfig.phone,
+    "email": companyConfig.email,
     "priceRange": "$$$",
     "address": {
       "@type": "PostalAddress",
